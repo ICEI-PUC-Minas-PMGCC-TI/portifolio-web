@@ -482,8 +482,84 @@ footer {
 }
 
 /* --- Responsividade Básica --- */
-@media (max-width: 768px) {
-    .hero, .projeto-card, .experiencia-grid {
-        grid-template-columns: 1fr;
+
+/* --- Responsividade --- */
+
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr; /* Empilha o texto e a imagem */
+        text-align: center;
+        min-height: auto;
+        gap: 2rem;
+    }
+
+    .hero-content h1 {
+        width: 100%;
+        white-space: normal; /* Permite que o título quebre linha no celular */
+        border-right: none;
+        animation: none;     /* Animação de digitação não funciona bem em múltiplas linhas */
+    }
+
+    .hero-image {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        margin-left: 0;
+        max-width: 15rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* Ajuste dos Cards de Projeto */
+    .projeto-card {
+        grid-template-columns: 1fr; /* Empilha imagem, info e tags */
+        width: 100%;
+    }
+
+    .projeto-image, .projeto-tags {
+        border: none;
+        border-bottom: 1px solid var(--bg-color);
+    }
+}
+
+@media (max-width: 600px) {
+    .menu {
+        gap: 1rem;
+        flex-wrap: wrap; /* Permite que os links do menu quebrem linha se necessário */
+        justify-content: center;
+    }
+
+    .logo {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .toggle-lang {
+        margin: 0 auto;
+    }
+
+    .experiencia-grid {
+        grid-template-columns: 1fr; /* Uma coluna de tecnologias por vez */
+    }
+
+    .email-form button {
+        margin-left: 0;
+        width: 100%; /* Botão de enviar ocupa a largura toda no celular */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links a {
+        padding-left: 0;
+        margin: 10px 0;
     }
 }
